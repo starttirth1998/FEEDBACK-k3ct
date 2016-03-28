@@ -1,0 +1,2 @@
+{{extend 'layout.html'}}
+<h1>This is the default/home_admin.html template</h1>

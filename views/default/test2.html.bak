@@ -1,0 +1,100 @@
+{{extend 'layout.html'}}
+
+{{for i in formList:}}
+    {{=i}}
+{{pass}}
+
+
+<input  id="id" name="id" value=""/>
+<input  id="id2" name="id2" value=""/>
+<span id="HD" ></span>
+
+
+<button onclick="reset();
+                 {{k=0}}
+                 {{for z in formList:}}                                    
+                 putAns1({{=list[k].id}});                                  
+                 {{k+=1}}
+                 {{pass}}
+                 
+                 {{j=0}}
+                 {{for i in formList:}}                                    
+                 putAns({{=list[j].id}});                                  
+                 {{j+=1}}
+                 {{pass}}
+                 ">SUBMIT</button>
+<script>
+    flag=1
+    flag2=1
+    function reset()
+    {
+        flag=1
+        flag2=1
+    }
+    function putAns1(i)
+    {
+        if(document.getElementById(i+"A").checked)
+        {
+            document.getElementById('id2').value = "A";
+        }
+        else if(document.getElementById(i+"B").checked)
+        {
+            document.getElementById('id2').value = "B";
+        }
+        else if(document.getElementById(i+"C").checked)
+        {
+            document.getElementById('id2').value = "C";
+        }
+        else if(document.getElementById(i+"D").checked)
+        {
+            document.getElementById('id2').value = "D";
+        }
+        else if(document.getElementById(i+"E").checked)
+        {
+            document.getElementById('id2').value = "E";
+        }
+        else
+        {
+             flag=0;
+        }
+    }
+    function putAns(i)
+    {
+        if(flag==0)
+        {
+            alert("Error");
+            flag2=0
+            flag=1
+            return 0
+        }
+        if(flag2==0)
+        {
+            return 0;
+        }
+        if(document.getElementById(i+"A").checked)
+        {
+            document.getElementById('id2').value = "A";
+        }
+        else if(document.getElementById(i+"B").checked)
+        {
+            document.getElementById('id2').value = "B";
+        }
+        else if(document.getElementById(i+"C").checked)
+        {
+            document.getElementById('id2').value = "C";
+        }
+        else if(document.getElementById(i+"D").checked)
+        {
+            document.getElementById('id2').value = "D";
+        }
+        else if(document.getElementById(i+"E").checked)
+        {
+            document.getElementById('id2').value = "E";
+        }
+        if(flag)
+        {
+        jQuery('#id').val(i);
+        ajax('{{=URL('default','storeAns')}}',['id','id2'],'HD');
+        }
+    }
+</script>

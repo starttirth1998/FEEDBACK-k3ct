@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<br>
+<br>
+<br>
+<table class="table">
+    <tr>
+        <td>Name:</td>
+        <td>{{=user_detail[0].first_name}} {{=user_detail[0].last_name}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{=user_detail[0].email}}</td>
+    </tr>
+    <tr>
+        <td>
+            Subjects
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+{{if tp[0][0]==9:}}
+<a href={{=URL('make_faculty',args=user_id)}}>Add to the faculties</a>
+{{pass}}

@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+<h2>
+    Add Question Set Type
+</h2>
+<br>
+{{=form1}}
+<br>
+<h2>
+    Add Question
+</h2>
+<br>
+{{=form2}}

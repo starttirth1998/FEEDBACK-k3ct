@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    {{for i in list:}}
+    <tr>
+        <td><a href="{{=URL('show_user')}}">{{=i.first_name}} {{=i.last_name}}</a></td>
+        <td>{{=i.email}}</td>
+    </tr>
+    {{pass}}
+</table>
